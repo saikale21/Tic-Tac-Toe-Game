@@ -5,6 +5,8 @@ let msgContainer = document.querySelector(".msg-container");
 let msg = document.querySelector("#msg");
 
 let turnO = true;
+
+const winSound = new Audio("Media Folder/win-sound.mp3.mp3");
 const winPatterns = [
     [0, 1, 2],
     [0, 3, 6],
@@ -54,6 +56,8 @@ const showWinner = (winner) => {
       msg.innerText = `Congratulations! Winner is ${winner}`;
       msgContainer.classList.remove("hide");
       disableBoxes();
+
+      winSound.play();
 }
 
 const checkWinner = () => {
